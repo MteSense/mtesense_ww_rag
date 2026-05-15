@@ -1,0 +1,16 @@
+[project]
+name = "ww-rag"
+version = "0.1.0"
+description = "Local folder based RAG service for project documents."
+requires-python = ">=3.11"
+dependencies = ["fastapi", "uvicorn", "pydantic"]
+
+[project.optional-dependencies]
+parsers = ["python-docx", "openpyxl", "pypdf"]
+api = ["fastapi", "uvicorn", "pydantic"]
+slack = ["slack-bolt"]
+test = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

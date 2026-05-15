@@ -19,8 +19,6 @@ Local-folder RAG service for project documents. The source folder is configured 
 ### Windows PowerShell
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
 python -m pip install -e .
 $env:RAGPYTHONPATH="$PWD\src"
 $env:RAG_SOURCE_DIR="document path"
@@ -32,8 +30,6 @@ python run_ww_rag.py serve --host 127.0.0.1 --port 8080
 ### Linux/macOS
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -e .
 export RAGPYTHONPATH="$PWD/src"
 export RAG_SOURCE_DIR="document path"
@@ -42,7 +38,7 @@ python run_ww_rag.py sync
 python run_ww_rag.py serve --host 127.0.0.1 --port 8080
 ```
 
-If you already have an activated Python environment, skip the virtual environment setup and run the environment variable commands plus the `python run_ww_rag.py ...` commands for your shell.
+These commands use the global/current Python environment. Make sure `python` points to the interpreter where you want to install and run WW RAG.
 
 `RAGPYTHONPATH` points to this repository's Python source directory. The launcher reads it and adds it to Python's import path before loading `ww_rag`.
 
